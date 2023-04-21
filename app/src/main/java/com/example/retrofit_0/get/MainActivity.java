@@ -1,9 +1,12 @@
-package com.example.retrofit_0;
+package com.example.retrofit_0.get;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
+
+import com.example.retrofit_0.R;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -16,11 +19,18 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
-
+    private TextView withNoParams;
+    private TextView withParams;
+    private TextView query1;
+    private TextView queryMap1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        withNoParams = findViewById(R.id.withnoparams);
+        withParams = findViewById(R.id.withParams);
+        query1 = findViewById(R.id.Query);
+        queryMap1 = findViewById(R.id.querymap);
         //无参数GET请求
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://www.baidu.com/")
@@ -31,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 try {
                     if(response.isSuccessful()) {
-                        Log.d("tag", response.body().string());
+                      withNoParams.setText(response.body().string());
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -54,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if(response.isSuccessful()){
                     try {
-                        Log.d("tag",response.body().string());
+                        withParams.setText(response.body().string());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -76,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
             if(response.isSuccessful()) {
                 try {
-                    Log.d("tag", response.body().string());
+                    query1.setText(response.body().string());
                 } catch (IOException e) {
                     e.printStackTrace();
                     Log.d("tag","io");
@@ -101,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if(response.isSuccessful()){
                     try {
-                        Log.d("tag1",response.body().string());
+                      queryMap1.setText(response.body().string());
                     } catch (IOException e) {
                         e.printStackTrace();
                         Log.d("tag","net");

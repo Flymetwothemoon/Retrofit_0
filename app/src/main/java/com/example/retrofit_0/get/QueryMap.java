@@ -1,4 +1,4 @@
-package com.example.retrofit_0;
+package com.example.retrofit_0.get;
 
 import java.util.Map;
 

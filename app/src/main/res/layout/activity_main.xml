@@ -4,15 +4,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".get.MainActivity">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:text="无参数访问"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/withnoparams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="动态配置URL地址(@Path)"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            app:layout_constraintTop_toBottomOf="@+id/withnoparams" />
+
+        <TextView
+            android:id="@+id/withParams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="动态指定查询条件:@Query"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            app:layout_constraintTop_toBottomOf="@+id/withParams"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/Query"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="动态指定查询条件组:@QueryMap"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            app:layout_constraintTop_toBottomOf="@+id/Query"
+            tools:layout_editor_absoluteX="-16dp" />
+
+        <TextView
+            android:id="@+id/querymap"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            tools:layout_editor_absoluteX="0dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

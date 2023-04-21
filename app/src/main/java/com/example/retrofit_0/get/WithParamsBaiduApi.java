@@ -1,4 +1,4 @@
-package com.example.retrofit_0;
+package com.example.retrofit_0.get;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
