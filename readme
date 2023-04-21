@@ -1,0 +1,5 @@
+MainActivity里面是Retroft的GET请求,
+分别用了无参数GET请求,
+动态配置URL地址({path}),
+Query查询,
+以及QueryMap。
