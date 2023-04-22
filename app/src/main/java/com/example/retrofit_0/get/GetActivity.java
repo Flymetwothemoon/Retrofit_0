@@ -2,11 +2,15 @@ package com.example.retrofit_0.get;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.retrofit_0.R;
+import com.example.retrofit_0.post.PostActivity;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -18,11 +22,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-public class MainActivity extends AppCompatActivity {
+public class GetActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView withNoParams;
     private TextView withParams;
     private TextView query1;
     private TextView queryMap1;
+    private Button mButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         withParams = findViewById(R.id.withParams);
         query1 = findViewById(R.id.Query);
         queryMap1 = findViewById(R.id.querymap);
+        mButton = findViewById(R.id.button);
+        mButton.setOnClickListener(this);
         //无参数GET请求
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://www.baidu.com/")
@@ -126,5 +133,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(GetActivity.this, PostActivity.class);
+        startActivity(intent);
     }
 }

@@ -5,6 +5,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface Query {
-    @GET("ip")
+    @GET("ip11111")
     Call<ResponseBody>getbody(@retrofit2.http.Query("ip")String ip);
 }
