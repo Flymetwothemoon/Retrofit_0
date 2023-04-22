@@ -3,3 +3,5 @@ MainActivity里面是Retroft的GET请求,
 动态配置URL地址({path}),
 Query查询,
 以及QueryMap。
+POST请求主要用了@Field键值对查询,@Field中必须把@FormURlEncoded加上
+@Body这个不能加@FormURlEncoded

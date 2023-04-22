@@ -10,6 +10,7 @@ import com.example.retrofit_0.R;
 
 import java.io.IOException;
 
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -57,6 +58,7 @@ public class PostActivity extends AppCompatActivity {
         body body = retrofit1.create(com.example.retrofit_0.post.body.class);
         bodytext bodytext = new bodytext("weather.future","1","10003","b59bc3ef6191eb9f747dd4e83c99f2a4","json");
         Call<ResponseBody>call1 = body.requestWeatherBeans(bodytext);
+
         call1.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
